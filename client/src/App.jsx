@@ -39,7 +39,7 @@ const MENU_ITEMS = [
     name: "Spicy Pepper Soup",
     description: "Authentic Nigerian pepper soup made with your choice of assorted meat, goat meat, or catfish.",
     price: 4500,
-    image: "https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "/download.jpeg",
     tag: "Spicy"
   },
   {
@@ -55,7 +55,7 @@ const MENU_ITEMS = [
     name: "Smoky Jollof & Fried Rice",
     description: "Classic Nigerian party Jollof and rich Fried Rice, served with your choice of protein.",
     price: 6000,
-    image: "https://images.unsplash.com/photo-1645696301019-35adcc18cdb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    image: "/jollof.jpeg",
     tag: "Main"
   },
   {
