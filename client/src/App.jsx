@@ -230,27 +230,94 @@ export default function App() {
         </div>
       </nav>
 
-      {/* ── MOBILE NAV STYLES ── */}
+      {/* ── RESPONSIVE STYLES ── */}
       <style>{`
-        @media (max-width: 768px) {
-          .desktop-nav { display: none !important; }
-          .mobile-menu-btn { display: flex !important; }
-          .btn-primary { display: none !important; }
-          .hero-grid { grid-template-columns: 1fr !important; }
-          .hero-image-col { display: none; }
-          .about-grid { grid-template-columns: 1fr !important; }
-          .menu-grid { grid-template-columns: 1fr !important; }
-          .testimonials-grid { grid-template-columns: 1fr !important; }
-          .contact-grid { grid-template-columns: 1fr !important; }
-          .footer-grid { grid-template-columns: 1fr 1fr !important; }
-          .stats-grid { grid-template-columns: 1fr 1fr !important; }
-          .hero-title { font-size: 40px !important; }
-          .hero-script { font-size: 48px !important; }
-          .section-heading { font-size: 32px !important; }
+        /* ── TABLET  641px – 1024px ── */
+        @media (min-width: 641px) and (max-width: 1024px) {
+          .footer-grid      { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+          .hero-grid        { gap: 40px !important; }
+          .about-grid       { gap: 48px !important; }
+          .hero-title       { font-size: 44px !important; }
+          .hero-script      { font-size: 52px !important; }
+          .section-heading  { font-size: 36px !important; }
+          .section-script   { font-size: 36px !important; }
+          .menu-grid        { grid-template-columns: 1fr 1fr !important; }
+          .testimonials-grid{ grid-template-columns: 1fr !important; gap: 16px !important; }
+          .contact-grid     { grid-template-columns: 1fr !important; gap: 24px !important; }
+          .contact-info     { padding: 40px 36px !important; }
+          .contact-form     { padding: 40px 36px !important; }
+          .section-pad      { padding: 80px 0 !important; }
+          .hero-inner       { padding: 48px 24px !important; }
+          .about-badge      { right: -8px !important; }
+          .stat-item        { padding: 28px 16px !important; }
         }
-        @media (min-width: 769px) and (max-width: 1024px) {
-          .menu-grid { grid-template-columns: 1fr 1fr !important; }
-          .footer-grid { grid-template-columns: 1fr 1fr !important; }
+
+        /* ── MOBILE  ≤ 640px ── */
+        @media (max-width: 640px) {
+          /* Nav */
+          .desktop-nav    { display: none !important; }
+          .mobile-menu-btn{ display: flex !important; }
+          .btn-primary    { display: none !important; }
+
+          /* Hero */
+          .hero-grid      { grid-template-columns: 1fr !important; gap: 0 !important; }
+          .hero-image-col { display: none !important; }
+          .hero-title     { font-size: 34px !important; }
+          .hero-script    { font-size: 40px !important; line-height: 1.15 !important; }
+          .hero-section   { min-height: auto !important; padding-top: 90px !important; }
+          .hero-inner     { padding: 40px 20px 60px !important; }
+          .hero-badge     { font-size: 11px !important; padding: 7px 14px !important; }
+          .hero-desc      { font-size: 15px !important; margin-bottom: 28px !important; }
+          .hero-cta-row   { gap: 12px !important; }
+          .hero-cta-row a,
+          .hero-cta-row button { padding: 14px 28px !important; font-size: 14px !important; width: 100%; justify-content: center !important; }
+          .hero-trust     { margin-top: 32px !important; padding-top: 24px !important; }
+
+          /* Stats strip */
+          .stats-grid     { grid-template-columns: 1fr 1fr !important; }
+          .stat-item      { padding: 28px 16px !important; border-right: none !important; border-bottom: 1px solid rgba(255,255,255,0.08); }
+          .stat-item:nth-child(odd)  { border-right: 1px solid rgba(255,255,255,0.08) !important; }
+          .stat-item:nth-child(3),
+          .stat-item:nth-child(4)    { border-bottom: none !important; }
+
+          /* Sections */
+          .section-pad    { padding: 64px 0 !important; }
+          .section-px     { padding-left: 20px !important; padding-right: 20px !important; }
+          .section-heading{ font-size: 28px !important; }
+          .section-script { font-size: 34px !important; }
+          .section-mb     { margin-bottom: 40px !important; }
+
+          /* About */
+          .about-grid     { grid-template-columns: 1fr !important; gap: 36px !important; }
+          .about-img-wrap { order: -1; }
+          .about-badge    { right: 0 !important; top: 16px !important; }
+          .about-stats    { grid-template-columns: 1fr 1fr !important; gap: 12px !important; margin-bottom: 28px !important; }
+          .about-stat-card{ padding: 16px !important; }
+
+          /* Menu */
+          .menu-grid      { grid-template-columns: 1fr !important; gap: 20px !important; }
+          .menu-img       { height: 200px !important; }
+
+          /* Testimonials */
+          .testimonials-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+          .testimonial-card  { padding: 28px 24px !important; }
+
+          /* Contact */
+          .contact-grid   { grid-template-columns: 1fr !important; gap: 24px !important; }
+          .contact-info   { padding: 36px 28px !important; border-radius: 24px !important; }
+          .contact-form   { padding: 36px 28px !important; border-radius: 24px !important; }
+          .contact-heading { font-size: 28px !important; margin-bottom: 40px !important; }
+
+          /* Footer */
+          .footer-grid    { grid-template-columns: 1fr !important; gap: 36px !important; }
+          .footer-pad     { padding: 60px 0 0 !important; }
+          .footer-inner   { padding: 0 20px !important; }
+          .footer-bottom  { flex-direction: column !important; text-align: center !important; gap: 8px !important; }
+
+          /* Modal */
+          .modal-names    { grid-template-columns: 1fr !important; }
+          .modal-inner    { padding: 24px 20px !important; }
+          .modal-title    { font-size: 26px !important; }
         }
       `}</style>
 
@@ -298,16 +365,16 @@ export default function App() {
           transform: orderModalOpen ? 'scale(1) translateY(0)' : 'scale(0.95) translateY(20px)',
           transition: 'transform 0.3s ease', maxHeight: '90vh', overflowY: 'auto'
         }}>
-          <div style={{ padding: '32px' }}>
+          <div className="modal-inner" style={{ padding: '32px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '28px' }}>
-              <h2 className="script" style={{ fontSize: '32px', color: '#4a3018' }}>Place Your Order</h2>
+              <h2 className="script modal-title" style={{ fontSize: '32px', color: '#4a3018' }}>Place Your Order</h2>
               <button onClick={() => setOrderModalOpen(false)} style={{
                 background: '#f4eadb', border: 'none', borderRadius: '50%', width: '36px', height: '36px',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#7a5230'
               }}><X size={18} /></button>
             </div>
             <form ref={orderFormRef} onSubmit={handleOrderSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              <div className="modal-names" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
                 {[['First Name', firstNameRef, 'text'], ['Last Name', lastNameRef, 'text']].map(([label, ref, type]) => (
                   <div key={label}>
                     <label style={{ display: 'block', fontSize: '13px', fontWeight: 500, color: '#7a5230', marginBottom: '6px' }}>{label}</label>
@@ -342,17 +409,17 @@ export default function App() {
       {/* ══════════════════════════════════════════
           HERO
       ══════════════════════════════════════════ */}
-      <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '100px' }}>
+      <section className="hero-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden', paddingTop: '100px' }}>
         {/* Background blobs */}
         <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '600px', height: '600px', background: '#f4eadb', borderRadius: '50%', filter: 'blur(80px)', opacity: 0.6 }} />
         <div style={{ position: 'absolute', bottom: '-80px', left: '-80px', width: '400px', height: '400px', background: 'rgba(198,140,83,0.15)', borderRadius: '50%', filter: 'blur(60px)', opacity: 0.8 }} />
 
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 24px', width: '100%', position: 'relative', zIndex: 1 }}>
+        <div className="hero-inner" style={{ maxWidth: '1200px', margin: '0 auto', padding: '60px 24px', width: '100%', position: 'relative', zIndex: 1 }}>
           <div className="hero-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
 
             {/* Left */}
             <div>
-              <div style={{
+              <div className="hero-badge" style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
                 background: '#f4eadb', color: '#c68c53', padding: '8px 18px',
                 borderRadius: '999px', fontSize: '12px', fontWeight: 600,
@@ -368,11 +435,11 @@ export default function App() {
                 Every Bite Feels<br />Like Royalty.
               </div>
 
-              <p style={{ fontSize: '17px', color: '#7a5230', lineHeight: 1.8, maxWidth: '480px', marginBottom: '40px' }}>
+              <p className="hero-desc" style={{ fontSize: '17px', color: '#7a5230', lineHeight: 1.8, maxWidth: '480px', marginBottom: '40px' }}>
                 From classic small chops to smoky party jollof and fresh parfaits — we deliver unforgettable catering for every occasion, big or small.
               </p>
 
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+              <div className="hero-cta-row" style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                 <button onClick={() => openOrderModal()} style={{
                   background: '#4a3018', color: 'white', border: 'none',
                   padding: '16px 36px', borderRadius: '999px', fontSize: '15px',
@@ -395,7 +462,7 @@ export default function App() {
               </div>
 
               {/* Mini trust row */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: '24px', marginTop: '48px', paddingTop: '32px', borderTop: '1px solid #f4eadb' }}>
+              <div className="hero-trust" style={{ display: 'flex', alignItems: 'center', gap: '24px', marginTop: '48px', paddingTop: '32px', borderTop: '1px solid #f4eadb' }}>
                 <div style={{ display: 'flex' }}>
                   {['#c68c53','#b07b46','#9a6a39'].map((c, i) => (
                     <div key={i} style={{ width: '36px', height: '36px', borderRadius: '50%', background: c, border: '2px solid white', marginLeft: i > 0 ? '-10px' : 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -453,7 +520,7 @@ export default function App() {
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)' }}>
             {STATS.map((s, i) => (
-              <div key={i} style={{
+              <div key={i} className="stat-item" style={{
                 padding: '36px 24px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px', textAlign: 'center',
                 borderRight: i < 3 ? '1px solid rgba(255,255,255,0.1)' : 'none'
               }}>
@@ -471,17 +538,17 @@ export default function App() {
       {/* ══════════════════════════════════════════
           ABOUT
       ══════════════════════════════════════════ */}
-      <section id="about" style={{ padding: '120px 0', background: '#fdfbf7' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+      <section id="about" className="section-pad" style={{ padding: '120px 0', background: '#fdfbf7' }}>
+        <div className="section-px" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <div className="about-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
 
             {/* Image */}
-            <div style={{ position: 'relative' }}>
+            <div className="about-img-wrap" style={{ position: 'relative' }}>
               <div style={{ position: 'absolute', inset: 0, background: 'rgba(198,140,83,0.08)', borderRadius: '40px', transform: 'rotate(-3deg) scale(1.04)' }} />
               <img src="https://images.unsplash.com/photo-1556910110-a5a63dfd393c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 alt="Baking Process" style={{ width: '100%', aspectRatio: '4/3', objectFit: 'cover', borderRadius: '40px', boxShadow: '0 20px 60px rgba(74,48,24,0.12)', position: 'relative', zIndex: 1 }} />
               {/* Experience badge */}
-              <div style={{
+              <div className="about-badge" style={{
                 position: 'absolute', top: '24px', right: '-16px', zIndex: 2,
                 background: '#c68c53', color: 'white', borderRadius: '20px', padding: '16px 20px',
                 boxShadow: '0 10px 30px rgba(198,140,83,0.4)', textAlign: 'center'
@@ -499,7 +566,7 @@ export default function App() {
               <h2 className="section-heading" style={{ fontSize: '44px', fontWeight: 800, color: '#4a3018', lineHeight: 1.1, marginBottom: '8px' }}>
                 The Secret is in
               </h2>
-              <div className="script" style={{ fontSize: '48px', color: '#c68c53', lineHeight: 1.1, marginBottom: '28px' }}>Our Passion</div>
+              <div className="script section-script" style={{ fontSize: '48px', color: '#c68c53', lineHeight: 1.1, marginBottom: '28px' }}>Our Passion</div>
 
               <p style={{ color: '#7a5230', lineHeight: 1.85, marginBottom: '20px', fontSize: '16px' }}>
                 Table of Kings started with a simple goal: to provide extraordinary catering experiences. We use only the freshest ingredients to craft meals, pastries, and party chops that bring life to your celebrations.
@@ -509,9 +576,9 @@ export default function App() {
               </p>
 
               {/* Stat row */}
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '40px' }}>
+              <div className="about-stats" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '40px' }}>
                 {[['500+', 'Events Catered'], ['4.9★', 'Customer Rating'], ['100%', 'Fresh Ingredients'], ['On Time', 'Every Delivery']].map(([val, label]) => (
-                  <div key={label} style={{ background: '#f4eadb', borderRadius: '16px', padding: '20px 22px' }}>
+                  <div key={label} className="about-stat-card" style={{ background: '#f4eadb', borderRadius: '16px', padding: '20px 22px' }}>
                     <p style={{ fontSize: '22px', fontWeight: 800, color: '#4a3018', lineHeight: 1 }}>{val}</p>
                     <p style={{ fontSize: '13px', color: '#7a5230', marginTop: '6px', fontWeight: 500 }}>{label}</p>
                   </div>
@@ -536,12 +603,12 @@ export default function App() {
       {/* ══════════════════════════════════════════
           MENU
       ══════════════════════════════════════════ */}
-      <section id="menu" style={{ padding: '120px 0', background: '#f9f4ed' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+      <section id="menu" className="section-pad" style={{ padding: '120px 0', background: '#f9f4ed' }}>
+        <div className="section-px" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
 
           {/* Heading */}
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <div className="script" style={{ fontSize: '40px', color: '#c68c53', lineHeight: 1.2, marginBottom: '8px' }}>Our Offerings</div>
+          <div className="section-mb" style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <div className="script section-script" style={{ fontSize: '40px', color: '#c68c53', lineHeight: 1.2, marginBottom: '8px' }}>Our Offerings</div>
             <h2 className="section-heading" style={{ fontSize: '44px', fontWeight: 800, color: '#4a3018', lineHeight: 1.1, marginBottom: '16px' }}>A Feast Fit for Kings</h2>
             <p style={{ color: '#7a5230', fontSize: '16px', maxWidth: '520px', margin: '0 auto', lineHeight: 1.7 }}>
               Handcrafted with love and the finest fresh ingredients for every occasion.
@@ -560,7 +627,7 @@ export default function App() {
                 onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 20px rgba(74,48,24,0.06)'; }}>
 
                 {/* Image */}
-                <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
+                <div className="menu-img" style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
                   <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s', filter: item.imgFilter || 'none' }}
                     onMouseEnter={e => e.target.style.transform = 'scale(1.05)'}
                     onMouseLeave={e => e.target.style.transform = 'scale(1)'} />
@@ -600,17 +667,17 @@ export default function App() {
       {/* ══════════════════════════════════════════
           TESTIMONIALS
       ══════════════════════════════════════════ */}
-      <section id="testimonials" style={{ padding: '120px 0', background: '#4a3018' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+      <section id="testimonials" className="section-pad" style={{ padding: '120px 0', background: '#4a3018' }}>
+        <div className="section-px" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
 
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <div className="script" style={{ fontSize: '40px', color: '#c68c53', lineHeight: 1.2, marginBottom: '8px' }}>Sweet Words</div>
+          <div className="section-mb" style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <div className="script section-script" style={{ fontSize: '40px', color: '#c68c53', lineHeight: 1.2, marginBottom: '8px' }}>Sweet Words</div>
             <h2 className="section-heading" style={{ fontSize: '44px', fontWeight: 800, color: 'white', lineHeight: 1.1 }}>What Our Customers Say</h2>
           </div>
 
           <div className="testimonials-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '24px' }}>
             {TESTIMONIALS.map((review) => (
-              <div key={review.id} style={{
+              <div key={review.id} className="testimonial-card" style={{
                 background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)',
                 borderRadius: '24px', padding: '36px 32px', display: 'flex', flexDirection: 'column', gap: '20px'
               }}>
@@ -642,18 +709,18 @@ export default function App() {
       {/* ══════════════════════════════════════════
           CONTACT
       ══════════════════════════════════════════ */}
-      <section id="contact" style={{ padding: '120px 0', background: '#fdfbf7' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+      <section id="contact" className="section-pad" style={{ padding: '120px 0', background: '#fdfbf7' }}>
+        <div className="section-px" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
 
-          <div style={{ textAlign: 'center', marginBottom: '64px' }}>
-            <div className="script" style={{ fontSize: '40px', color: '#c68c53', lineHeight: 1.2, marginBottom: '8px' }}>Get In Touch</div>
-            <h2 className="section-heading" style={{ fontSize: '44px', fontWeight: 800, color: '#4a3018', lineHeight: 1.1 }}>We'd Love to Hear From You</h2>
+          <div className="section-mb" style={{ textAlign: 'center', marginBottom: '64px' }}>
+            <div className="script section-script" style={{ fontSize: '40px', color: '#c68c53', lineHeight: 1.2, marginBottom: '8px' }}>Get In Touch</div>
+            <h2 className="contact-heading section-heading" style={{ fontSize: '44px', fontWeight: 800, color: '#4a3018', lineHeight: 1.1 }}>We'd Love to Hear From You</h2>
           </div>
 
           <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'start' }}>
 
             {/* Info side */}
-            <div style={{ background: '#4a3018', borderRadius: '28px', padding: '48px 40px', height: '100%' }}>
+            <div className="contact-info" style={{ background: '#4a3018', borderRadius: '28px', padding: '48px 40px', height: '100%' }}>
               <h3 style={{ fontSize: '26px', fontWeight: 700, color: 'white', marginBottom: '12px' }}>Contact Information</h3>
               <p style={{ color: 'rgba(212,197,185,0.8)', marginBottom: '40px', lineHeight: 1.7, fontSize: '15px' }}>
                 Drop by for a warm slice, or reach out for large orders and special requests.
@@ -701,7 +768,7 @@ export default function App() {
             </div>
 
             {/* Form side */}
-            <div style={{ background: 'white', borderRadius: '28px', padding: '48px 40px', boxShadow: '0 4px 30px rgba(74,48,24,0.06)', border: '1px solid #f4eadb' }}>
+            <div className="contact-form" style={{ background: 'white', borderRadius: '28px', padding: '48px 40px', boxShadow: '0 4px 30px rgba(74,48,24,0.06)', border: '1px solid #f4eadb' }}>
               <h3 style={{ fontSize: '24px', fontWeight: 700, color: '#4a3018', marginBottom: '28px' }}>Send a Message</h3>
               <form style={{ display: 'flex', flexDirection: 'column', gap: '18px' }} onSubmit={handleContactSubmit}>
                 <div>
@@ -734,8 +801,8 @@ export default function App() {
       {/* ══════════════════════════════════════════
           FOOTER
       ══════════════════════════════════════════ */}
-      <footer style={{ background: '#2a1a0c', color: '#d4c5b9', padding: '80px 0 0' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+      <footer className="footer-pad" style={{ background: '#2a1a0c', color: '#d4c5b9', padding: '80px 0 0' }}>
+        <div className="footer-inner section-px" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
           <div className="footer-grid" style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1.5fr', gap: '48px', paddingBottom: '56px', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
 
             {/* Brand */}
@@ -818,7 +885,7 @@ export default function App() {
           </div>
 
           {/* Bottom bar */}
-          <div style={{ padding: '24px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
+          <div className="footer-bottom" style={{ padding: '24px 0', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px' }}>
             <p style={{ fontSize: '13px', opacity: 0.5 }}>&copy; {new Date().getFullYear()} Table of Kings. All rights reserved.</p>
             <div style={{ display: 'flex', gap: '24px' }}>
               {['Privacy Policy', 'Terms of Service'].map(label => (
