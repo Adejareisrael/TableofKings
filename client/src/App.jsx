@@ -71,9 +71,9 @@ const MENU_ITEMS = [
 ];
 
 const TESTIMONIALS = [
-  { id: 1, name: "Sarah Jenkins", role: "Birthday Event", text: "The small chops and smoky jollof were the absolute highlight of our party. Table of Kings truly delivers on their promise of a royal taste!" },
-  { id: 2, name: "Marcus T.", role: "Corporate Dinner", text: "Absolutely incredible service, and the pepper soup was dangerously good. Perfect spice level and super fast delivery." },
-  { id: 3, name: "Emily Chen", role: "Wedding Reception", text: "From the rich parfaits to the pastries, everything was so fresh and flavorful. Table of Kings is my new go-to for all catering needs." }
+  { id: 1, name: "Tolu Adeleke", role: "Birthday Event", text: "The small chops and smoky jollof were the absolute highlight of our party. Table of Kings truly delivers on their promise of a royal taste!" },
+  { id: 2, name: "Kola Balogun", role: "Corporate Dinner", text: "Absolutely incredible service, and the pepper soup was dangerously good. Perfect spice level and super fast delivery." },
+  { id: 3, name: "Kemi Fashola", role: "Wedding Reception", text: "From the rich parfaits to the pastries, everything was so fresh and flavorful. Table of Kings is my new go-to for all catering needs." }
 ];
 
 const STATS = [
