@@ -40,6 +40,7 @@ const MENU_ITEMS = [
     description: "Authentic Nigerian pepper soup made with your choice of assorted meat, goat meat, or catfish.",
     price: 4500,
     image: "/download.jpeg",
+    imgFilter: 'brightness(1.15) contrast(1.2) saturate(1.25)',
     tag: "Spicy"
   },
   {
@@ -56,6 +57,7 @@ const MENU_ITEMS = [
     description: "Classic Nigerian party Jollof and rich Fried Rice, served with your choice of protein.",
     price: 6000,
     image: "/jollof.jpeg",
+    imgFilter: 'brightness(1.08) contrast(1.15) saturate(1.2) sharpen(1)',
     tag: "Main"
   },
   {
@@ -559,7 +561,7 @@ export default function App() {
 
                 {/* Image */}
                 <div style={{ position: 'relative', height: '220px', overflow: 'hidden' }}>
-                  <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }}
+                  <img src={item.image} alt={item.name} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s', filter: item.imgFilter || 'none' }}
                     onMouseEnter={e => e.target.style.transform = 'scale(1.05)'}
                     onMouseLeave={e => e.target.style.transform = 'scale(1)'} />
                   <div style={{
